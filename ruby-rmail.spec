@@ -12,7 +12,7 @@ Source0:	http://www.lickey.com/rubymail/download/%{tarname}-%{version}.tar.gz
 URL:		http://www.lickey.com/rubymail/
 BuildRequires:	ruby
 BuildRequires:	ruby-devel
-BuildArchitecture: noarch
+BuildArchitectures: noarch
 Requires:	ruby
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
