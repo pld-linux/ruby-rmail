@@ -13,8 +13,8 @@ Source0:	http://www.lickey.com/rubymail/download/%{tarname}-%{version}.tar.gz
 URL:		http://www.lickey.com/rubymail/
 BuildRequires:	ruby
 BuildRequires:	ruby-devel
-BuildArch:	noarch
 Requires:	ruby
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
