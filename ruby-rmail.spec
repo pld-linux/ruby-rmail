@@ -5,7 +5,7 @@ Summary:	RubyMail mail library
 Summary(pl):	RubyMail - biblioteka do obs³ugi poczty
 Name:		ruby-RMail
 Version:	0.17
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages
 %define tarname rubymail
