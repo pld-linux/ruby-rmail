@@ -27,7 +27,7 @@ ruby install.rb config \
 	--rb-dir=%{ruby_rubylibdir} \
 	--so-dir=%{ruby_archdir}
 
-rdoc -o doc/ --main README README NEWS NOTES TODO THANKS lib/* guide/*
+rdoc -o rdoc/ --main README README NEWS NOTES TODO THANKS lib/* guide/*
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -39,6 +39,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/*
+%doc rdoc/*
 %{ruby_rubylibdir}/rmail
 %{ruby_rubylibdir}/rmail.rb
