@@ -1,6 +1,7 @@
 %define	ruby_archdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
 %define ruby_rubylibdir %(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
 Summary:	RubyMail mail library
+Summary(pl):	RubyMail - biblioteka do obs³ugi poczty
 Name:		ruby-RMail
 Version:	0.16
 Release:	2
@@ -17,7 +18,10 @@ Requires:	ruby
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Mail handling module for Ruby
+Mail handling module for Ruby.
+
+%description -l pl
+Modu³ dla jêzyka Ruby obs³uguj±cy pocztê.
 
 %prep
 %setup -q -n %{tarname}-%{version}
@@ -32,6 +36,7 @@ rdoc -o rdoc/ --main README README NEWS NOTES TODO THANKS lib/* guide/*
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{ruby_rubylibdir}
+
 ruby install.rb install --prefix=$RPM_BUILD_ROOT
 
 %clean
