@@ -3,13 +3,13 @@
 Summary:	RubyMail mail library
 Summary(pl):	RubyMail - biblioteka do obs³ugi poczty
 Name:		ruby-RMail
-Version:	0.16
-Release:	2
+Version:	0.17
+Release:	1
 License:	GPL
 Group:		Development/Languages
 %define tarname rubymail
 Source0:	http://www.lickey.com/rubymail/download/%{tarname}-%{version}.tar.gz
-# Source0-md5:	e1ebe23fe9b6e8117be15e74ef6405b2
+# Source0-md5:	68ed70492541086b4bf17e8e75857e2e
 URL:		http://www.lickey.com/rubymail/
 BuildRequires:	ruby
 BuildRequires:	ruby-devel
@@ -31,7 +31,7 @@ ruby install.rb config \
 	--rb-dir=%{ruby_rubylibdir} \
 	--so-dir=%{ruby_archdir}
 
-rdoc -o rdoc/ --main README README NEWS NOTES TODO THANKS lib/* guide/*
+rdoc -o rdoc/ --main README README NEWS NOTES TODO THANKS lib/* guide/* --title "%{name} %{version}" --inline-source
 
 %install
 rm -rf $RPM_BUILD_ROOT
