@@ -1,5 +1,6 @@
 %define	ruby_archdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
 %define ruby_rubylibdir %(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
+%define	ruby_ridir	%(ruby -r rbconfig -e 'include Config; print File.join(CONFIG["datadir"], "ri", CONFIG["ruby_version"], "system")')
 Summary:	RubyMail mail library
 Summary(pl):	RubyMail - biblioteka do obs³ugi poczty
 Name:		ruby-RMail
@@ -34,12 +35,15 @@ ruby install.rb config \
 	--so-dir=%{ruby_archdir}
 
 rdoc -o rdoc/ --main README README NEWS NOTES TODO THANKS lib/* guide/* --title "%{name} %{version}" --inline-source
+rdoc --ri -o ri lib/*
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{ruby_rubylibdir}
+install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir}}
 
 ruby install.rb install --prefix=$RPM_BUILD_ROOT
+
+cp -a ri/ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,3 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc rdoc/*
 %{ruby_rubylibdir}/rmail
 %{ruby_rubylibdir}/rmail.rb
+%{ruby_ridir}/RMail
