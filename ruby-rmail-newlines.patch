@@ -1,0 +1,20 @@
+diff -ur rubymail-0.17-orig/lib/rmail/parser.rb rubymail-0.17/lib/rmail/parser.rb
+--- rubymail-0.17-orig/lib/rmail/parser.rb	2004-04-27 23:19:04.000000000 -0600
++++ rubymail-0.17/lib/rmail/parser.rb	2004-08-08 19:27:27.075778032 -0600
+@@ -214,14 +214,14 @@
+           # newline.
+           rest = data[1..-1]
+         else
+-          header, rest = data.split(/\n\n/, 2)
++          header, rest = data.split(/\r?\n\r?\n/, 2)
+         end
+         break if rest
+       end
+       input.pushback(rest)
+       if header
+         mime = false
+-        fields = header.split(/\n(?!\s)/)
++        fields = header.split(/\r?\n(?!\s)/)
+         if fields.first =~ /^From /
+           @handler.mbox_from(fields.first)
+           fields.shift
