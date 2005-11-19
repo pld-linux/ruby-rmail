@@ -1,6 +1,3 @@
-%define	ruby_archdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
-%define ruby_rubylibdir %(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
-%define	ruby_ridir	%(ruby -r rbconfig -e 'include Config; print File.join(CONFIG["datadir"], "ri", CONFIG["ruby_version"], "system")')
 Summary:	RubyMail mail library
 Summary(pl):	RubyMail - biblioteka do obs³ugi poczty
 Name:		ruby-RMail
@@ -11,8 +8,9 @@ Group:		Development/Languages
 %define tarname rubymail
 Source0:	http://www.lickey.com/rubymail/download/%{tarname}-%{version}.tar.gz
 # Source0-md5:	68ed70492541086b4bf17e8e75857e2e
-Patch0:	ruby-RMail-newlines.patch
+Patch0:		%{name}-newlines.patch
 URL:		http://www.lickey.com/rubymail/
+BuildRequires:	rpmbuild(macros) >= 1.263
 BuildRequires:	ruby
 BuildRequires:	ruby-devel
 Requires:	ruby
