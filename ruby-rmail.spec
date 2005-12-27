@@ -11,7 +11,6 @@ Source0:	http://www.lickey.com/rubymail/download/%{tarname}-%{version}.tar.gz
 Patch0:		%{name}-newlines.patch
 URL:		http://www.lickey.com/rubymail/
 BuildRequires:	rpmbuild(macros) >= 1.263
-BuildRequires:	ruby-modules
 BuildRequires:	ruby-devel
 Requires:	ruby-modules
 #BuildArch:	noarch
