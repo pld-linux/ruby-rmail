@@ -10,9 +10,9 @@ Source0:	http://www.lickey.com/rubymail/download/%{tarname}-%{version}.tar.gz
 # Source0-md5:	68ed70492541086b4bf17e8e75857e2e
 Patch0:		%{name}-newlines.patch
 URL:		http://www.lickey.com/rubymail/
-BuildRequires:	rpmbuild(macros) >= 1.263
+BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-devel
-Requires:	ruby-modules
+%ruby_mod_ver_requires_eq
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
