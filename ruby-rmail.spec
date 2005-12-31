@@ -12,7 +12,7 @@ Patch0:		%{name}-newlines.patch
 URL:		http://www.lickey.com/rubymail/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-devel
-%ruby_mod_ver_requires_eq
+%{?ruby_mod_ver_requires_eq}
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
