@@ -1,5 +1,5 @@
 Summary:	RubyMail mail library
-Summary(pl):	RubyMail - biblioteka do obs³ugi poczty
+Summary(pl.UTF-8):   RubyMail - biblioteka do obsÅ‚ugi poczty
 Name:		ruby-RMail
 Version:	0.17
 Release:	5
@@ -19,8 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Mail handling module for Ruby.
 
-%description -l pl
-Modu³ dla jêzyka Ruby obs³uguj±cy pocztê.
+%description -l pl.UTF-8
+ModuÅ‚ dla jÄ™zyka Ruby obsÅ‚ugujÄ…cy pocztÄ™.
 
 %prep
 %setup -q -n %{tarname}-%{version}
